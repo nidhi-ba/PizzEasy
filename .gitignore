@@ -1,0 +1,5 @@
+node_modules/
+.DS_store
+# Ignore Windows system directories
+AppData/
+Local/

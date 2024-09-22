@@ -1,0 +1,52 @@
+<div class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="w-full max-w-md p-8 space-y-8 bg-white shadow-lg rounded-lg">
+        <h2 class="text-3xl font-bold text-center text-gray-800">Create your account</h2>
+        <form class="space-y-6">
+            <!-- Name Input -->
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                <input id="name" name="name" type="text" required
+                    class="mt-2 appearance-none block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
+                    placeholder="Full Name">
+            </div>
+
+            <!-- Email Input -->
+            <div>
+                <label for="email-address" class="block text-sm font-medium text-gray-700">Email address</label>
+                <input id="email-address" name="email" type="email" required
+                    class="mt-2 appearance-none block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
+                    placeholder="Email address">
+            </div>
+
+            <!-- Password Input -->
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input id="password" name="password" type="password" required
+                    class="mt-2 appearance-none block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
+                    placeholder="Password">
+            </div>
+
+            <!-- Confirm Password Input -->
+            <div>
+                <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                <input id="confirm-password" name="confirm-password" type="password" required
+                    class="mt-2 appearance-none block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
+                    placeholder="Confirm Password">
+            </div>
+
+            <!-- Register Button -->
+            <div>
+                <button type="submit"
+                    class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500" href="/login">
+                    Register
+                </button>
+            </div>
+        </form>
+        
+        <!-- Sign in Link -->
+        <p class="mt-6 text-center text-sm text-gray-600">
+            Already have an account? 
+            <a href="/login" class="font-medium text-orange-600 hover:text-orange-500">Sign in</a>
+        </p>
+    </div>
+</div>

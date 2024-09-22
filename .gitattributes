@@ -1,0 +1,8 @@
+# Set default behavior to automatically normalize line endings
+* text=auto
+
+# Force specific file types to use LF line endings
+*.sh text eol=lf
+*.md text eol=lf
+*.ini text eol=lf
+*.txt text eol=lf
