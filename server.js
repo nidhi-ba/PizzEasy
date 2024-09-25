@@ -1,32 +1,40 @@
-const express = require('express')
-const app = express()
-const ejs = require('ejs')
-const expressLayout = require('express-ejs-layouts')
-const path = require('path')
-const PORT = process.env.PORT || 3000
+const express = require('express');
+const app = express();
+const ejs = require('ejs');
+const expressLayout = require('express-ejs-layouts');
+const path = require('path');
+const PORT = process.env.PORT || 3000;
+const mongoose = require('mongoose');
 
-app.use(express.static('public'))
+// Database connection
+const url = 'mongodb://localhost/pizza';
 
-app.use(expressLayout)
-app.set('views',path.join(__dirname, '/resources/views'))
-app.set('view engine','ejs')
+// No need for useNewUrlParser and useUnifiedTopology in the latest version
+mongoose.connect(url);
 
-app.get('/', (req,res) => {
-    res.render('Home')
-})
+// Handle successful connection
+const connection = mongoose.connection;
+connection.once('open', () => {
+    console.log('Database connected...');
+});
 
-app.get('/cart', (req,res) => {
-    res.render('customers/cart')
-})
+// Handle connection errors
+connection.on('error', (err) => {
+    console.error('Connection failed:', err);
+});
 
-app.get('/login', (req,res) => {
-    res.render('auth/login')
-})
+// Assets (static files like CSS, JS, etc.)
+app.use(express.static('public'));
 
-app.get('/register', (req,res) => {
-    res.render('auth/register')
-})
+// Setting up EJS as the view engine
+app.use(expressLayout);
+app.set('views', path.join(__dirname, '/resources/views'));
+app.set('view engine', 'ejs');
 
-app.listen(PORT , () => {
-    console.log(`Listening on PORT ${PORT}`)
-})
+// Import routes
+require('./routes/web')(app);
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Listening on PORT ${PORT}`);
+});
