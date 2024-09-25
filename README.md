@@ -1,1 +1,1 @@
-Pizzeasy - A realtime Pizza Delivery App
+PizzEasy - A realtime Pizza Delivery App
